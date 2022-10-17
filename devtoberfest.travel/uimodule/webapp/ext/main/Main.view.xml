@@ -1,0 +1,26 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:macros="sap.fe.macros"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    controllerName="devtoberfest.travel.ext.main.Main">
+    <Page id="Main"
+        title="Main">
+        <content>
+            <VBox id="MyVBox"
+                class="sapUiSmallMargin">
+
+                <macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields#SF1"
+                    id="FilterBar" />
+                <macros:Chart id="Chart"
+                    contextPath="/BookedFlights/"
+                    metaPath="@com.sap.vocabularies.UI.v1.Chart#MyChart"
+                    filterBar="FilterBar"
+                    personalization="Type,Item,Sort"
+                    selectionMode="Single"
+                    selectionChange=".onChartSelectionChanged" />
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
